@@ -1,0 +1,66 @@
+body {
+  background: linear-gradient(to top, #a8edea 0%, #fed6e3 100%) no-repeat center
+    center fixed;
+  width: 100%;
+  height: auto;
+}
+h1 {
+  color: #00bbf0;
+}
+
+li {
+  list-style: none;
+  font-size: 20px;
+}
+.container {
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+.weatherNow {
+  margin: 0 310px;
+  padding: 0;
+}
+.d-flex {
+  width: 300px;
+  float: right;
+  right: 30px;
+  margin-left: 50px;
+}
+.myLocation {
+  float: right;
+  left: 0px;
+}
+.current-city {
+  padding-top: 50px;
+}
+.place {
+  position: relative;
+  left: 310px;
+  text-transform: capitalize;
+}
+.current-temp {
+  font-size: 25px;
+  font-weight: 500px;
+  position: relative;
+  bottom: 5px;
+  left: 310px;
+}
+.current-degrees {
+  font-size: 12px;
+  position: relative;
+  bottom: 10px;
+  right: 5px;
+}
+.weatherCondition {
+  margin: auto;
+  padding: 0;
+  position: relative;
+  bottom: 60px;
+  left: 130px;
+}
+.card-text {
+  text-align: center;
+}
+.current-day2 {
+  font-weight: bold;
+}
