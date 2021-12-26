@@ -61,25 +61,6 @@ function searchInput(event) {
   displayCity(city);
 }
 
-function getCoordinates(position) {
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
-  let apiKey = "d7088a793c0eff8a4e5e745c7821e6e9";
-  let unit = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
-  console.log(position);
-
-  axios.get(apiUrl).then(getWeather);
-}
-
-function getPosition(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(getCoordinates);
-}
-
-let currentCoordinatesButton = document.querySelector("#currentCoordinates");
-currentCoordinatesButton.addEventListener("click", getPosition);
-
 displayCity("Toronto");
 
 let today = document.querySelector("#current-date");
