@@ -59,6 +59,10 @@ li:first-letter {
   position: relative;
   bottom: 10px;
 }
+.fdegrees {
+  text-decoration: none;
+}
+
 .card-text {
   text-align: center;
 }
@@ -67,4 +71,13 @@ li:first-letter {
 }
 .sideComment {
   margin-left: 80px;
+}
+
+.current-temp .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+.current-temp .active .hover {
+  text-decoration: none;
 }
