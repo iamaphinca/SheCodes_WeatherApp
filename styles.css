@@ -12,6 +12,10 @@ li {
   list-style: none;
   font-size: 20px;
 }
+
+li:first-letter {
+  text-transform: capitalize;
+}
 .container {
   margin-top: 30px;
   margin-bottom: 0px;
@@ -28,35 +32,39 @@ li {
 }
 .current-city {
   padding-top: 50px;
+  position: relative;
+  bottom: 50px;
 }
 .place {
   position: relative;
-  left: 310px;
+  left: 305px;
   text-transform: capitalize;
 }
 .current-temp {
   font-size: 25px;
   font-weight: 500px;
   position: relative;
-  bottom: 5px;
-  left: 310px;
-}
-.current-degrees {
-  font-size: 12px;
-  position: relative;
-  bottom: 10px;
-  right: 5px;
+  bottom: 35px;
+  left: 340px;
 }
 .weatherCondition {
   margin: auto;
   padding: 0;
   position: relative;
-  bottom: 60px;
+  bottom: 20px;
   left: 130px;
+}
+.current-degrees {
+  font-size: 15px;
+  position: relative;
+  bottom: 10px;
 }
 .card-text {
   text-align: center;
 }
 .current-day2 {
   font-weight: bold;
+}
+.sideComment {
+  margin-left: 80px;
 }

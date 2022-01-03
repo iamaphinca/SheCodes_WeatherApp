@@ -1,4 +1,13 @@
-function dateFormat(event) {
+function dateFormat(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
   let days = [
     "Sunday",
     "Monday",
@@ -9,42 +18,33 @@ function dateFormat(event) {
     "Saturday",
   ];
 
-  let day = days[event.getDay()];
-  let hour = event.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-  let minute = event.getMinutes();
-  if (minute < 10) {
-    minute = `0${minute}`;
-  }
-  let dateNow = `${day}  ${hour}:${minute}`;
+  let day = days[date.getDay()];
 
-  return dateNow;
+  return `${day}  ${hours}:${minutes}`;
 }
 
 function getWeather(response) {
   console.log(response);
-  let currentCity = response.data.name;
-  let currentTemperature = Math.ceil(response.data.main.temp);
-  let weatherDescription = response.data.weather[0].main;
-  let currentHumidity = response.data.main.humidity;
-  let currentWind = Math.ceil(response.data.wind.speed);
 
-  let h2 = document.querySelector("#city");
-  h2.innerHTML = currentCity;
-
-  let temperature = document.querySelector("#temp");
-  temperature.innerHTML = currentTemperature;
-
+  let currentCity = document.querySelector("#city");
+  let currentTemperature = document.querySelector("#temp");
   let currentDescription = document.querySelector("#description");
-  currentDescription.innerHTML = weatherDescription;
-
-  let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = currentHumidity;
-
+  let currentHumidity = document.querySelector("#humidity");
   let windSpeed = document.querySelector("#windSpeed");
-  windSpeed.innerHTML = currentWind;
+  let currentDate = document.querySelector("#current-date");
+  let icon = document.querySelector("#weatherIcon");
+
+  currentCity.innerHTML = response.data.name;
+  currentTemperature.innerHTML = Math.ceil(response.data.main.temp);
+  currentDescription.innerHTML = response.data.weather[0].description;
+  currentHumidity.innerHTML = response.data.main.humidity;
+  windSpeed.innerHTML = Math.ceil(response.data.wind.speed);
+  currentDate.innerHTML = dateFormat(response.data.dt * 1000);
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
 }
 
 function displayCity(city) {

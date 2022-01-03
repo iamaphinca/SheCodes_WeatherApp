@@ -39,30 +39,33 @@
         The Weather Channel
       </h1>
 
-      <img src="images/icon.png" width=200px" alt="icon">
+      <img src="images/icon.png" width="200px" alt="icon">
 
-      </br>
+   
       
       <div class="current-city">
 
       <h2>
         <span class="place" id="city"></span>
       </h2>
-
+      
       <ul class="weatherNow">
-        <li id="current-date"></li>
+        <li>Last updated: <span   id="current-date"></span></li>
         <li id="description"></li>
       </ul>
+      </div>
       <div class="row">
         <div class="col-6">
+                     
            
-       
             <div class="current-temp">
+            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="clear" id="weatherIcon">
             <span class="temperature" id="temp"></span>
             <span class="current-degrees" id="celcius">
-               ℃
+               ℃ | <a href="">℉</a>
             </span>
             </div>
+            
         </div>
 
         <div class="col-6" id="conditions">
@@ -158,7 +161,7 @@
     </div>
 
   </br>
-  <p>
+  <p class="sideComment">
     <a href="https://github.com/iamaphinca/SheCodes_WeatherApp" target="_blank">
       Open-source code 
     </a>
