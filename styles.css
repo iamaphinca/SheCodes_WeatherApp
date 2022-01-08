@@ -1,11 +1,9 @@
-body {
-  background: linear-gradient(to top, #a8edea 0%, #fed6e3 100%) no-repeat center
-    center fixed;
-  width: 100%;
-  height: auto;
-}
 h1 {
   color: #00bbf0;
+  margin-bottom: 0px;
+  position: relative;
+  bottom: 50px;
+  display: block;
 }
 
 li {
@@ -16,68 +14,81 @@ li {
 li:first-letter {
   text-transform: capitalize;
 }
-.container {
-  margin-top: 30px;
+
+button {
+  position: relative;
+  left: 400px;
+  bottom: 38px;
+}
+.app-wrapper {
+  max-width: 500px;
+  max-height: 800px;
+  margin: 20px auto;
   margin-bottom: 0px;
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 15px;
+  background-image: url(./images/pic1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 350px;
+}
+.input-group {
+  position: relative;
+  left: 180px;
 }
 .weatherNow {
-  margin: 0 310px;
-  padding: 0;
-}
-.d-flex {
-  width: 300px;
-  float: right;
-  right: 30px;
-  margin-left: 50px;
-}
-.current-city {
-  padding-top: 50px;
   position: relative;
   bottom: 50px;
+  padding: 0px;
+  margin-bottom: 0px;
+  margin-left: 8px;
 }
-.place {
-  position: relative;
-  left: 305px;
-  text-transform: capitalize;
+.row {
+  padding: 0px;
 }
-.current-temp {
-  font-size: 25px;
-  font-weight: 500px;
+.temperature {
+  font-size: 30px;
+  font-weight: bold;
   position: relative;
-  bottom: 35px;
-  left: 340px;
+  bottom: 30px;
+  left: 50px;
+}
+.degrees {
+  position: relative;
+  bottom: 40px;
+  left: 45px;
+}
+.weather-icon {
+  position: relative;
+  left: 65px;
+  bottom: 40px;
 }
 .weatherCondition {
-  margin: auto;
-  padding: 0;
   position: relative;
   bottom: 20px;
-  left: 130px;
-}
-.current-degrees {
-  font-size: 15px;
-  position: relative;
-  bottom: 10px;
-}
-.fdegrees {
-  text-decoration: none;
 }
 
-.card-text {
+.weatherForecast {
   text-align: center;
-}
-.current-day2 {
+  position: relative;
+  bottom: 40px;
   font-weight: bold;
 }
-.sideComment {
-  margin-left: 80px;
+.weather-forecast-day {
+  font-size: 15px;
+  opacity: 0.7;
+}
+.weather-forecast-temp {
+  font-size: 12px;
+}
+.weather-forecast-temp-min {
+  opacity: 0.7;
 }
 
-.current-temp .active {
-  color: black;
-  cursor: default;
-  text-decoration: none;
-}
-.current-temp .active .hover {
-  text-decoration: none;
+.sideComment {
+  margin-left: 400px;
+  margin-top: 0px;
+  text-align: left;
 }
