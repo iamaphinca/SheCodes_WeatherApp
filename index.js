@@ -23,7 +23,8 @@ function dateFormat(timestamp) {
   return `${day}  ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let currentForecast = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -50,7 +51,14 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   currentForecast.innerHTML = forecastHTML;
-  console.log(forecastHTML);
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "d7088a793c0eff8a4e5e745c7821e6e9";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function getWeather(response) {
@@ -77,6 +85,8 @@ function getWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function displayCity(city) {
@@ -101,4 +111,3 @@ let inputSearch = document.querySelector("#enterCity");
 inputSearch.addEventListener("submit", searchInput);
 
 displayCity("Toronto");
-displayForecast();
