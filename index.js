@@ -23,6 +23,36 @@ function dateFormat(timestamp) {
   return `${day}  ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let currentForecast = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2">
+            <div class="weather-forecast-day">${day}</div>
+            <img
+              src="http://openweathermap.org/img/wn/01d@2x.png"
+              alt=""
+              width="40"
+            />
+            <div class="weather-forecast-temp">
+              <span class="weather-forecast-temp-max">-10°</span>
+              <span class="weather-forecast-temp-min">-15°</span>
+            </div>
+          </div>
+        `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  currentForecast.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 function getWeather(response) {
   console.log(response);
 
@@ -71,3 +101,4 @@ let inputSearch = document.querySelector("#enterCity");
 inputSearch.addEventListener("submit", searchInput);
 
 displayCity("Toronto");
+displayForecast();
