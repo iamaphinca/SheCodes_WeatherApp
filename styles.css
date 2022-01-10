@@ -90,7 +90,7 @@ button {
 }
 
 .sideComment {
-  margin-left: 320px;
   margin-top: 0px;
-  text-align: left;
+  text-align: center;
+  display: block;
 }
